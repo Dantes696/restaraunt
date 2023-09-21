@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    {% include 'components/_links.html' %}
+</head>
+
+<body>
+<div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    {% include 'components/_spinner.html' %}
+    <!-- Spinner End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-xxl position-relative p-0">
+        {% include 'components/_navbar.html' %}
+
+        {% block hero %}
+        {% include 'components/_hero.html' %}
+        {% endblock hero %}
+    </div>
+    <!-- Navbar & Hero End -->
+
+    {% block main %}
+
+    {% endblock main %}
+
+
+    <!-- Footer Start -->
+    {% include 'components/_footer.html' %}
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>
+
+{% include 'components/_scripts.html' %}
+</body>
+
+</html>
